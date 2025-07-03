@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Usuario</title>
+  <link rel="stylesheet" href="assets/styles/registro.css">
+</head>
+<body>
+
+<h1>Crear Cuenta</h1>
+
+<form>
+  <input type="text" name="nombre" placeholder="Nombre completo" required>
+  <input type="number" name="edad" placeholder="Edad" required min ="18">
+  <input type="text" placeholder="Ciudad" required>
+  <input type="email" placeholder="Correo electrónico" required>
+  <input type="password" placeholder="Contraseña" required>
+
+  <div class="form-buttons">
+    <button type="submit">Continuar</button>
+    <button type="button" onclick="window.location.href='index.html'">Volver</button>
+  </div>
+</form>
+</form>
+<div class="social-login">
+  <span>O ingresa con:</span>
+  <img src="assets/images/google-icon.png" alt="Google">
+  <img src="assets/images/facebook-icon.png" alt="Facebook">
+</div>
+<script src="assets/scripts/registro.js"></script>
+</body>
+</html>
+
