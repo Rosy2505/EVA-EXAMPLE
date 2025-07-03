@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversación con EVA</title>
+    <link rel="stylesheet" href="assets/styles/conversacion.css">
+</head>
+<body>
+
+<h1>Conversación con EVA</h1>
+
+<div class="chat-container" id="chat">
+    <div class="chat-bubble eva">Hola, soy EVA 😊 ¿Cómo te sientes hoy?</div>
+    <div class="chat-bubble user">Hola EVA, me siento un poco solo últimamente.</div>
+    <div class="chat-bubble eva">Gracias por compartirlo conmigo. Estoy aquí para acompañarte siempre que lo necesites 💜</div>
+</div>
+
+<div class="input-area">
+    <input type="text" id="userInput" placeholder="Escribe tu mensaje...">
+    <button onclick="sendMessage()">Enviar</button>
+</div>
+
+<div class="back-button">
+    <button onclick="window.location.href='index.html'">Volver al inicio</button>
+</div>
+
+<script>
+    function sendMessage() {
+        const input = document.getElementById("userInput");
+        const chat = document.getElementById("chat");
+        const text = input.value.trim();
+
+        if (text !== "") {
+            const userBubble = document.createElement("div");
+            userBubble.className = "chat-bubble user";
+            userBubble.innerText = text;
+            chat.appendChild(userBubble);
+            input.value = "";
+
+            setTimeout(() => {
+                const responses = [
+                    "Me alegra que me escribas 😊",
+                    "Estoy aquí para escucharte 💜",
+                    "Cuéntame más, te estoy prestando atención.",
+                    "¿Te gustaría que hagamos algo juntos?",
+                    "Estoy feliz de acompañarte hoy ☀️"
+                ];
+                const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                const evaBubble = document.createElement("div");
+                evaBubble.className = "chat-bubble eva";
+                evaBubble.innerText = randomResponse;
+                chat.appendChild(evaBubble);
+                chat.scrollTop = chat.scrollHeight;
+            }, 800);
+        }
+    }
+</script>
+</body>
+</html>
